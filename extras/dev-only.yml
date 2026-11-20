@@ -1,0 +1,15 @@
+# Homework 3: commit this ONLY on the dev branch, as .github/workflows/dev-only.yml
+name: Dev-only workflow
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+
+jobs:
+  dev-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Event ${{ github.event_name }} on ref ${{ github.ref }}"
