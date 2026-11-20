@@ -10,6 +10,7 @@ on:
     branches: [main]
   workflow_dispatch:       # Homework 6: manual trigger
 
+
 jobs:
   test:
     runs-on: ubuntu-latest
