@@ -1,0 +1,24 @@
+# Homework 1 + 2: first workflow
+name: First workflow
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:          # Homework 2: runs when a PR targets main
+    branches: [main]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      # Homework 1: comment out this step and push. `ls -al` will then show an empty folder.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Who am I
+        run: whoami          # prints "runner"
+
+      - name: Show files
+        run: |
+          pwd
+          ls -al
